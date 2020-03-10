@@ -1,11 +1,7 @@
 <template>
   <div class="container is-fulid">
-    <div>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+    <div v-for="post in postList" :key="post.postId">
+      <Card :post="post"></Card>
     </div>
   </div>
 </template>
@@ -14,6 +10,11 @@
 import Card from "@/components/Card.vue";
 export default {
   name: "Forum",
-  components: { Card }
+  components: { Card },
+  computed: {
+    postList() {
+      return this.$store.state.postList;
+    }
+  }
 };
 </script>
