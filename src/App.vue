@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div class="container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav
+        id="top-nav"
+        class="navbar is-fixed-top is-primary"
+        role="navigation"
+        aria-label="main navigation"
+      >
         <div class="navbar-brand">
           <a class="navbar-item" href="#">DA CREW</a>
 
@@ -49,7 +54,48 @@
           </div>
         </div>
       </nav>
-      <router-view />
+
+      <router-view id="contents" />
+
+      <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+        <div class="columns is-mobile is-centered is-vcentered">
+          <div class="column has-text-centered">
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+            </a>
+          </div>
+          <div class="column has-text-centered">
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-search"></i>
+              </span>
+            </a>
+          </div>
+          <div class="column has-text-centered">
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-comment-dots"></i>
+              </span>
+            </a>
+          </div>
+          <div class="column has-text-centered">
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-bell"></i>
+              </span>
+            </a>
+          </div>
+          <div class="column has-text-centered">
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fas fa-ellipsis-h"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
   </div>
 </template>
@@ -63,5 +109,8 @@ export default {
 <style scoped>
 #app {
   background-color: #e9ebebdc;
+}
+#contents {
+  margin-top: 50px;
 }
 </style>
