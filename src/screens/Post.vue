@@ -74,15 +74,19 @@
       <div class="tile is-child box" v-for="comment in comments" :key="comment.commentId">
         <Comment :comment="comment"></Comment>
       </div>
+      <div class="is-fixed-bottom">
+        <ReplyEditor />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Comment from "@/components/Comment";
+import ReplyEditor from "@/components/ReplyEditor";
 export default {
   name: "Post",
-  components: { Comment },
+  components: { Comment, ReplyEditor },
   created() {
     let postId = this.$route.params.postId;
     this.$store.dispatch("getPost", postId);
@@ -92,7 +96,7 @@ export default {
   },
   methods: {
     goBack() {
-      this.$router.go(-1);
+      this.$router.push({ name: "Forum" });
     }
   }
 };

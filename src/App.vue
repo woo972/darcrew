@@ -94,6 +94,13 @@
               </span>
             </a>
           </div>
+          <div class="column has-text-centered">
+            <a class="navbar-item" @click="routeToPostEditor">
+              <span class="icon">
+                <i class="fas fa-edit"></i>
+              </span>
+            </a>
+          </div>
         </div>
       </nav>
     </div>
@@ -102,7 +109,12 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    routeToPostEditor() {
+      this.$router.push({ name: "PostEditor" });
+    }
+  }
 };
 </script>
 

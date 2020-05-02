@@ -23,7 +23,7 @@
         </span>
         {{comment.likeCounts}}
       </div>
-      <div class="level-item">
+      <div class="level-item" @click="routeToReplyEditor">
         <span class="icon">
           <i class="fas fa-comments"></i>
         </span>
@@ -41,6 +41,11 @@ export default {
   name: "comment",
   props: {
     comment: [Object]
+  },
+  methods: {
+    routeToReplyEditor() {
+      this.$router.push({ name: "ReplyEditor" });
+    }
   }
 };
 </script>
