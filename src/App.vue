@@ -27,7 +27,7 @@
           <div class="navbar-start">
             <a class="navbar-item">Home</a>
 
-            <a class="navbar-item">Documentation</a>
+            <a class="navbar-item" @click="routeToNestEditor">내 둥지 생성</a>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">More</a>
@@ -113,6 +113,9 @@ export default {
   methods: {
     routeToPostEditor() {
       this.$router.push({ name: "PostEditor" });
+    },
+    routeToNestEditor() {
+      this.$router.push({ name: "NestEditor" });
     }
   }
 };

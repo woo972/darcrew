@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "PostEditor",
+  name: "ReplyEditor",
   methods: {
     addReply() {}
   }
